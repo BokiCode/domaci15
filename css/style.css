@@ -1,3 +1,9 @@
 .text-align-center {
     text-align: center;
 }
+#usersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
