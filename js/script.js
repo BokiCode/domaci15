@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    function fetchUserData(url,type) {
+        $.ajax({
+            url: url,
+            type: type,
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    }
     $.ajax({
         url: "https://reqres.in/api/users?page=2",
         success: function (response) {
@@ -14,4 +23,18 @@ $(document).ready(function () {
             }
         }
     });
+    fetchUserData("https://reqres.in/api/users/2","GET");
+    fetchUserData("https://reqres.in/api/users/23","GET");
+    fetchUserData("https://reqres.in/api/unknown","GET");
+    fetchUserData("https://reqres.in/api/unknown/2","GET");
+    fetchUserData("https://reqres.in/api/unknown/23","GET");
+    fetchUserData("https://reqres.in/api/users","POST");
+    fetchUserData("https://reqres.in/api/users/2","PUT");
+    fetchUserData("https://reqres.in/api/users/2","PATCH");
+    fetchUserData("https://reqres.in/api/users/2","DELETE");
+    fetchUserData("https://reqres.in/api/register","POST");
+    fetchUserData("https://reqres.in/api/register","POST");
+    fetchUserData("https://reqres.in/api/login","POST");
+    fetchUserData("https://reqres.in/api/login","POST");
+    fetchUserData("https://reqres.in/api/users?delay=3","GET");
 });
